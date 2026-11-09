@@ -1,9 +1,12 @@
 package it.unibo.mvc;
 
+import java.lang.reflect.InvocationTargetException;
+
 import it.unibo.mvc.api.DrawNumberController;
 import it.unibo.mvc.controller.DrawNumberControllerImpl;
 import it.unibo.mvc.model.DrawNumberImpl;
 import it.unibo.mvc.view.DrawNumberSwingView;
+import it.unibo.mvc.view.DrawNumberStandardOutputView;
 
 /**
  * Application entry-point.
@@ -26,5 +29,8 @@ public final class LaunchApp {
         final var model = new DrawNumberImpl();
         final DrawNumberController app = new DrawNumberControllerImpl(model);
         app.addView(new DrawNumberSwingView());
+        //second GUI
+        app.addView(new DrawNumberSwingView());
+        app.addView(new DrawNumberStandardOutputView());
     }
 }
